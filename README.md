@@ -18,9 +18,10 @@ Currently includes:
 2. open terminal and cd to project folder "cd StayTune"
 3. run "npm install" command
 4. run "react-native link" command
-5. open the StayTune/ios/StayTune.xcworkspace in Xcode
-6. Click on Play button (Make sure you connected a device or simulator)
-7. App will open in iphone connected / Simulator
+5. cd ios & run "pod install"
+6. open the StayTune/ios/StayTune.xcworkspace in Xcode
+7. Click on Play button (Make sure you connected a ios device or simulator)
+8. App will open in iphone connected / Simulator
 
 [![CircleCI](https://circleci.com/gh/infinitered/ignite-bowser.svg?style=svg)](https://circleci.com/gh/infinitered/ignite-bowser)
 
