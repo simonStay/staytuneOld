@@ -8,7 +8,7 @@ Currently includes:
 - TypeScript
 - And more!
 
-# Pre-requizations that need to be installed:
+# Pre-requisitions that need to be installed:
 1. ReactNative 0.60.5
 2. React 16.8.6
 3. Node 12.13.1
@@ -20,8 +20,8 @@ Currently includes:
 4. run "react-native link" command
 5. cd ios & run "pod install"
 6. open the StayTune/ios/StayTune.xcworkspace in Xcode
-7. Click on Play button (Make sure you connected a ios device or simulator)
-8. App will open in iphone connected / Simulator
+7. Click on the Play button (Make sure you connected a ios device or simulator)
+8. The staytune app will open in iPhone connected / Simulator
 
 [![CircleCI](https://circleci.com/gh/infinitered/ignite-bowser.svg?style=svg)](https://circleci.com/gh/infinitered/ignite-bowser)
 
