@@ -26,6 +26,7 @@ import ChangePassword from "../screens/change-password"
 
 import EditProfile from "../screens/edit-profile"
 import EditBudget from "../screens/edit-budget"
+import NotificationDetailScreen from "../screens/notification-detail-screen"
 
 
 const stackNav = createStackNavigator(
@@ -45,6 +46,7 @@ const stackNav = createStackNavigator(
     EditBudget: { screen: EditBudget },
     OTPScreen: { screen: OTPScreen },
     ChangePassword: { screen: ChangePassword },
+    NotificationDetailScreen: { screen: NotificationDetailScreen }
   },
   {
     initialRouteName: "Splash",

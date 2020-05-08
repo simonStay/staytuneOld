@@ -50,6 +50,7 @@ export const Header: React.FunctionComponent<HeaderProps> = props => {
     rightText,
     rightTextStyle,
     titleStyle,
+    from
   } = props
   const header = headerText || (headerTx && translate(headerTx)) || "";
   const rightTxt = rightText || ""
@@ -66,11 +67,13 @@ export const Header: React.FunctionComponent<HeaderProps> = props => {
       <View style={TITLE_MIDDLE}>
         <Text style={{ ...TITLE, ...titleStyle }} text={header} />
       </View>
-      {rightIcon ? (
-        <Button preset="link" style={RIGHT} onPress={onRightPress}>
-          <Icon icon={rightIcon} />
-        </Button>
-      ) : (
+      {rightIcon ? from === 'interest' ? (<TouchableOpacity style={RIGHT} onPress={onRightPress}>
+        <Text style={{ ...RIGHT_TITLE, ...rightTextStyle }} text={'Skip'} />
+      </TouchableOpacity>) : (
+          <Button preset="link" style={RIGHT} onPress={onRightPress}>
+            <Icon icon={rightIcon} />
+          </Button>
+        ) : (
           <TouchableOpacity style={RIGHT} onPress={onRightPress}>
             <Text style={{ ...RIGHT_TITLE, ...rightTextStyle }} text={rightTxt} />
           </TouchableOpacity>

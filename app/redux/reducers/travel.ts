@@ -7,8 +7,8 @@ import {
   USER_SAVED_LOCATIONS,
   UPDATE_TRAVEL_PREFERENCE,
   GET_PREFERENCES_BY_ID,
-  SELECT_TOUR_GUIDE,
   EDIT_TRAVEL_PREFERENCE,
+  GET_GUIDE_BY_ID
 } from "./../actions/travel"
 import { TRAVEL_SIGN_OUT } from "./../actions/user"
 
@@ -62,11 +62,6 @@ export default function travel(state = {}, action) {
         loader: false,
         savedLocations: action.payload,
       }
-    case SELECT_TOUR_GUIDE:
-      return {
-        ...state,
-        tourGuideInfo: action.payload,
-      }
     case LOADER_TRAVEL:
       return {
         ...state,
@@ -77,6 +72,12 @@ export default function travel(state = {}, action) {
         travel: {},
       }
     }
+    case GET_GUIDE_BY_ID:
+      return {
+        ...state,
+        loader: false,
+        getGuideById: action.payload,
+      }
   }
   return state
 }

@@ -29,12 +29,13 @@ class OTPScreen extends Component<Props, userDetails> {
   }
 
   async handleSubmit() {
+    console.log("previousScreen", this.props.navigation.state.params.previousScreen)
     let OTPValue =
       this.props.navigation.state.params.previousScreen === "register"
         ? await this.props.user.user.register.otp
         : this.props.navigation.state.params.previousScreen === "Login"
-        ? await this.props.user.user.login.otp
-        : await this.props.user.user.passwordCode.otp
+          ? await this.props.user.user.login.otp
+          : await this.props.user.user.passwordCode.otp
     console.log("user_otp", JSON.stringify(OTPValue))
     if (OTPValue == this.state.OTP) {
       if (
@@ -56,16 +57,16 @@ class OTPScreen extends Component<Props, userDetails> {
                   onPress: async () => {
                     //self.props.navigation.push("Login")
                     if (self.props.navigation.state.params.previousScreen === "Login") {
-                      this.props.navigation.push("MainScreen", {
-                        userId: self.props.user.login.id,
+                      self.props.navigation.push("MainScreen", {
+                        userId: verifyUserResponse.payload.data.id,
                         selectedValue: "Start a plan",
-                        headerTitle: "STAY TUNE",
+                        headerTitle: "STAYTUNE",
                       })
                     } else {
                       this.props.navigation.push("MainScreen", {
                         userId: verifyUserResponse.payload.data.id,
                         selectedValue: "Start a plan",
-                        headerTitle: "STAY TUNE",
+                        headerTitle: "STAYTUNE",
                       })
                     }
                   },

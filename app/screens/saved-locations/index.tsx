@@ -10,6 +10,8 @@ import AnimatedLoader from "react-native-animated-loader"
 import _ from 'lodash';
 import { Icon } from "../../components/icon"
 import { color, dimensions } from "../../theme"
+import firebase from 'react-native-firebase';
+let Analytics = firebase.analytics();
 
 interface Props {
   navigation: NavigationScreenProp<NavigationState>
@@ -34,6 +36,11 @@ class SavedLocations extends Component<Props, savedLocationsInfo> {
       savedLocations: [],
       visible: this.props.travel.loader,
     }
+    Analytics.setAnalyticsCollectionEnabled(true);
+    Analytics.logEvent('Saved_locations', {
+      group_id: 'Saved_locations',
+      score: 1
+    })
   }
 
   async componentDidMount() {
@@ -48,6 +55,13 @@ class SavedLocations extends Component<Props, savedLocationsInfo> {
 
   onBudget(item) {
     this.props.locationBudgetInfo(item)
+  }
+  onNotification(item) {
+    console.log("item_123", item)
+    this.props.navigation.push("MainScreen", {
+      navigateTo: "NOTIFICATIONS",
+      preferenceId: item.id
+    })
   }
 
   renderItem = ({ item }) => {
@@ -67,11 +81,14 @@ class SavedLocations extends Component<Props, savedLocationsInfo> {
           <Text style={styles.budgetText}>{total}</Text>
         </View>
         <View style={styles.footer}>
-          <TouchableOpacity onPress={this.onBudget.bind(this, item)} style={{ height: dimensions.width / 7, width: dimensions.width / 2, alignItems: 'center', justifyContent: 'center' }}>
+          <TouchableOpacity onPress={this.onBudget.bind(this, item)} style={{ height: dimensions.width / 7, width: dimensions.width / 3, alignItems: 'center', justifyContent: 'center' }}>
             <Icon icon={"budgetBlack"} style={styles.icon} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={this.onLocation.bind(this, item)} style={{ height: dimensions.width / 7, width: dimensions.width / 2, alignItems: 'center', justifyContent: 'center' }}>
+          <TouchableOpacity onPress={this.onLocation.bind(this, item)} style={{ height: dimensions.width / 7, width: dimensions.width / 3, alignItems: 'center', justifyContent: 'center' }}>
             <Icon icon={"edit"} style={styles.icon} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.onNotification.bind(this, item)} style={{ height: dimensions.width / 7, width: dimensions.width / 3, alignItems: 'center', justifyContent: 'center' }}>
+            <Icon icon={"notification"} style={styles.icon} />
           </TouchableOpacity>
         </View>
       </CardView>

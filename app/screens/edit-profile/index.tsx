@@ -155,19 +155,28 @@ class EditProfile extends Component<Props, UserInformation> {
         { cancelable: false },
       )
     } else {
-      let userInfoObj = {
-        firstname: this.state.firstName,
-        lastname: this.state.lastName,
-        age: parseInt(this.state.age),
-        state: this.state.state,
-        zip: this.state.zip,
-        userId: this.props.userInfo.id,
-        token: this.props.userInfo.token,
-        profilePic: this.state.avatarSource,
-        maritalStatus: this.state.marialStatusSelected,
-      }
 
       try {
+
+        console.log("userId_editProfile:", this.props.user.userProfileInfo)
+
+        let id =
+          this.props.user.login !== undefined
+            ? this.props.user.login.id
+            : this.props.user.userProfileInfo.data.id
+
+        let userInfoObj = {
+          firstname: this.state.firstName,
+          lastname: this.state.lastName,
+          age: parseInt(this.state.age),
+          state: this.state.state,
+          zip: this.state.zip,
+          userId: id,
+          token: "",
+          profilePic: this.state.avatarSource,
+          maritalStatus: this.state.marialStatusSelected,
+        }
+
         let editProfile = await this.props.createUserProfile(userInfoObj)
         console.log("createUserProfile_editprofile:", editProfile)
 
@@ -185,7 +194,7 @@ class EditProfile extends Component<Props, UserInformation> {
           setTimeout(() => {
             Alert.alert(
               "Stay Tune",
-              "Something went wrong",
+              "Server not responding, please try after sometime.",
               [{ text: "OK", onPress: () => console.log("OK Pressed") }],
               { cancelable: false },
             )
@@ -250,8 +259,8 @@ class EditProfile extends Component<Props, UserInformation> {
             keyPrefix: "profile-pictures/",
             bucket: "stay-tune-avatars",
             region: "us-west-2",
-            accessKey: "AKIAVPIPZG7WBQX7KZGD ",
-            secretKey: "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",
+            accessKey: "AKIAVPIPZG7WIVCBNST5 ",
+            secretKey: "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",
             successActionStatus: 201,
           }
           RNS3.put(file, obj).then(response => {

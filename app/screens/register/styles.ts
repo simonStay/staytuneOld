@@ -25,15 +25,15 @@ const styles = StyleSheet.create({
   wallpaper: { flex: 1 },
   scrollContainer: { flex: 1, justifyContent: "center" },
   logo: {
-    height: 100,
-    width: 100,
+    height: 80,
+    width: 80,
     marginTop: 100,
     alignSelf: "center",
     marginVertical: 10,
   },
   welcomeText: {
     color: color.text,
-    fontSize: 24,
+    fontSize: 20,
     textAlign: "center",
     marginHorizontal: 10,
     fontFamily: "OpenSans-Semibold",
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     color: color.text,
     textAlign: "center",
     marginTop: 10,
+    marginBottom: 30,
     fontFamily: "OpenSans-Semibold",
   },
 })

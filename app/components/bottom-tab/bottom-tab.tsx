@@ -1,10 +1,12 @@
 import * as React from "react"
-import { View, Text, TouchableOpacity, ViewStyle, TextStyle } from "react-native"
+import { View, TouchableOpacity, ViewStyle, TextStyle } from "react-native"
 import { presets } from "./bottom-tab.presets"
 import { ViewProps } from "./bottom-tab.props"
 import { mergeAll, flatten } from "ramda"
 import { color, dimensions, fontsize } from "../../theme"
 import { Badge, } from 'native-base';
+import { Text } from './../text'
+
 
 export function BottomTab(props: ViewProps) {
 

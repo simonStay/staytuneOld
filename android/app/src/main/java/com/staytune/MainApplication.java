@@ -3,10 +3,17 @@ package com.staytune;
 import android.app.Application;
 import android.util.Log;
 
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage; // <-- Add this line
+
 import com.facebook.react.PackageList;
 import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
+import io.invertase.firebase.RNFirebasePackage;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+import com.marianhello.bgloc.react.BackgroundGeolocationPackage;
+import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.horcrux.svg.SvgPackage;
 import iyegoroff.RNTextGradient.RNTextGradientPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
@@ -29,8 +36,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
-      // Packages that cannot be autolinked yet can be added manually here, for example:
-      // packages.add(new MyReactNativePackage());
+      //Packages that cannot be autolinked yet can be added manually here, for example:
+      //packages.add(new MyReactNativePackage());
+      packages.add(new RNFirebaseAnalyticsPackage()); // <-- Add this line
+      //packages.add(new BackgroundGeolocationPackage()); // <---- Add the Package
+
       return packages;
     }
 

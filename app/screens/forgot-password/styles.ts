@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: color.text,
-    fontSize: 24,
+    fontSize: 20,
     textAlign: "center",
     marginHorizontal: 10,
     fontFamily: "OpenSans-Semibold",
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
   },
   wallpaper: { flex: 1 },
   logo: {
-    height: 100,
-    width: 100,
+    height: 80,
+    width: 80,
     marginTop: 10,
     alignSelf: "center",
     marginVertical: 10,

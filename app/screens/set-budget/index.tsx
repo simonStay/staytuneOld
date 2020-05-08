@@ -14,8 +14,10 @@ import { color, dimensions, spacing } from "../../theme"
 
 import { connect } from "react-redux"
 import { setTravelPreferences, setBudgeInfo, editPreferences } from "../../redux/actions/travel"
+import { setBudgetLogEvents } from "../../redux/actions/budget"
 import AnimatedLoader from "react-native-animated-loader"
 import DatePicker from "react-native-datepicker"
+import moment from "moment"
 
 interface Props {
   navigation: NavigationScreenProp<NavigationState>
@@ -23,9 +25,11 @@ interface Props {
   setTravelPreferences: any
   user: any
   travel: any
+  budget: any
   daysRef: any
   editPreferences: any
   travelPreferenceId: any
+  setBudgetLogEvents: any
 }
 interface UserInformation {
   personsCount: any
@@ -57,10 +61,10 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
       city: "",
       travelDate: "",
       locationImage: "",
-      visible: this.props.travel.loader,
+      visible: false,
       selectedTravelPreferences: [],
       editBuget: false,
-      preferenceId: ""
+      preferenceId: "",
     }
     this.noOfDaysInput = React.createRef()
     this.totalBudgetInput = React.createRef()
@@ -68,6 +72,8 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
   }
 
   async componentDidMount() {
+    //await this.props.setBudgetLogEvents([])
+
     //alert("klklklklklklkl" + JSON.stringify(this.props.navigation.state.params.travelPreferenceId))
     if (this.props.navigation.state.params.travelPreferenceId == undefined || this.props.navigation.state.params.travelPreferenceId == "undefined" ||
       this.props.navigation.state.params.travelPreferenceId == null || this.props.navigation.state.params.travelPreferenceId == "") {
@@ -108,6 +114,7 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
     }
     try {
       // await this.props.setBudgeInfo(setTravelBudget)
+      console.log("setTravelBudget_123", JSON.stringify(setTravelBudget))
       await this.props.setTravelPreferences(setTravelBudget)
       if (this.props.travel.travelPreferenceInfo.status == "Success") {
         this.props.navigation.push("SetInitialInterest")
@@ -118,7 +125,7 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
         setTimeout(() => {
           Alert.alert(
             "Stay Tune",
-            "Something went wrong",
+            "Server not responding, please try after sometime.",
             [{ text: "OK", onPress: () => console.log("OK Pressed") }],
             { cancelable: false },
           )
@@ -135,6 +142,22 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
   }
 
   async onNext() {
+    var logsArray
+    // console.log('beforeAPI_123:', this.props.budget.setBudgetLogs)
+    if (this.props.budget.setBudgetLogs == undefined || this.props.budget.setBudgetLogs == null) {
+      logsArray = []
+      var actionType = 'Clicked the Next Button';
+      logsArray.push({ actionType })
+      this.props.setBudgetLogEvents(logsArray)
+    } else {
+      logsArray = this.props.budget.setBudgetLogs
+      var actionType = 'Clicked the Next Button';
+      logsArray.push({ actionType })
+      this.props.setBudgetLogEvents(logsArray)
+    }
+
+
+
     if (this.state.travelDate == "" || this.state.travelDate == null) {
       Alert.alert(
         "Stay Tune",
@@ -192,6 +215,12 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
         { cancelable: false },
       )
     } else {
+
+      var actionType = 'Before API CAll'
+      logsArray.push({ actionType })
+      this.props.setBudgetLogEvents(logsArray)
+      console.log('beforeAPI_123:', logsArray)
+
       let userId
       if (this.props.user.userProfileInfo == undefined) {
         userId = this.props.user.login.id
@@ -205,24 +234,50 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
         totalBudget: parseInt(this.state.totalBudget),
         city: this.state.city,
         userId: userId,
-        locationImage: "",
+        locationImage: "https://www.planetware.com/photos-large/USTX/us-texas-austin-state-capitol.jpg",
         travelDate: this.state.travelDate,
         preferenceId: this.state.preferenceId
       }
       try {
+        this.setState({
+          visible: true
+        })
         await this.props.setBudgeInfo(setTravelBudget)
         if (this.state.preferenceId == "" || this.state.preferenceId == undefined) {
           await this.props.setTravelPreferences(setTravelBudget)
+
+          var actionType = "'STAY-TUNE/travel-preferences'___This API EndPoint is called successfully for user: " + userId
+          logsArray.push({ actionType })
+          this.props.setBudgetLogEvents(logsArray)
+
           if (this.props.travel.travelPreferenceInfo.status == "Success") {
+            this.setState({
+              visible: false
+            })
+
+            var actionType = "API Response status is Success"
+            logsArray.push({ actionType })
+            this.props.setBudgetLogEvents(logsArray)
+
             this.props.navigation.push("SetInitialInterest")
           } else {
+            this.setState({
+              visible: false
+            })
             {
               /*This is Temporary solution */
             }
+
+            var actionType = "Server not responding"
+            logsArray.push({ actionType })
+            this.props.setBudgetLogEvents(logsArray)
+
+            this.props.navigation.push("SetInitialInterest")
+
             setTimeout(() => {
               Alert.alert(
                 "Stay Tune",
-                "Something went wrong",
+                "Server not responding, please try after sometime.",
                 [{ text: "OK", onPress: () => console.log("OK Pressed") }],
                 { cancelable: false },
               )
@@ -231,15 +286,21 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
         } else {
           await this.props.editPreferences(setTravelBudget)
           if (this.props.travel.editTravelPreferences.status == "Success") {
+            this.setState({
+              visible: false
+            })
             this.props.navigation.push("SetInitialInterest")
           } else {
             {
               /*This is Temporary solution */
             }
+            this.setState({
+              visible: false
+            })
             setTimeout(() => {
               Alert.alert(
                 "Stay Tune",
-                "Something went wrong",
+                "Server not responding, please try after sometime.",
                 [{ text: "OK", onPress: () => console.log("OK Pressed") }],
                 { cancelable: false },
               )
@@ -248,6 +309,10 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
         }
 
       } catch (error) {
+        var actionType = "Got an error:" + error
+        logsArray.push({ actionType })
+        this.props.setBudgetLogEvents(logsArray)
+
         console.log(error)
       }
     }
@@ -257,7 +322,6 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
     return (
       <View style={styles.container}>
         <Wallpaper style={styles.wallpaper} />
-
         <Header
           style={styles.header}
           headerText={"SET BUDGET"}
@@ -272,9 +336,10 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
         <KeyboardAwareScrollView
           ref="scrollView"
           resetScrollToCoords={{ x: 0, y: 0 }}
+          extraScrollHeight={30}
           scrollEnabled={true}
         >
-          <Text style={styles.textStyle}>Select your travel date ?</Text>
+          <Text style={styles.textStyle}>Travel Start Date</Text>
           <DatePicker
             style={{
               borderWidth: 0,
@@ -286,17 +351,18 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
               backgroundColor: "transparent",
               marginLeft: dimensions.width * 0.05,
             }}
+            allowFontScaling={false}
             date={this.state.travelDate}
             mode="date"
             placeholder="Select travel date"
-            format="DD-MM-YYYY"
-            minDate={new Date()}
+            format="YYYY-MM-DD"
+            minDate={moment().format("YYYY-MM-DD")}
             //maxDate="2016-06-01"
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
             showIcon={false}
             onDateChange={date => {
-              this.setState({ travelDate: date })
+              this.setState({ travelDate: moment(date).format() })
             }}
             customStyles={{
               dateText: {
@@ -326,7 +392,7 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
             }}
           />
 
-          <Text style={styles.textStyle}>How many persons are there in your travel ?</Text>
+          <Text style={styles.textStyle}>Number of People Traveling with you</Text>
           <TextField
             style={{ paddingVertical: 0 }}
             inputStyle={styles.inputStyle}
@@ -339,13 +405,12 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
             onSubmitEditing={() => this.noOfDaysInput.current.focus()}
           />
 
-          <Text style={styles.textStyle}>How many days you will travel ?</Text>
+          <Text style={styles.textStyle}>Number of Days traveling</Text>
           <TextField
             forwardedRef={this.noOfDaysInput}
             style={{ paddingVertical: 0 }}
             inputStyle={styles.inputStyle}
             placeholder="Number of Days"
-            //autoFocus={true}
             placeholderTextColor={color.placeholderText}
             onChangeText={value => this.setState({ daysCount: value })}
             value={this.state.daysCount.toString()}
@@ -354,7 +419,7 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
             onSubmitEditing={() => this.totalBudgetInput.current.focus()}
           />
 
-          <Text style={styles.textStyle}>How much is your total budget for this travel ?</Text>
+          <Text style={styles.textStyle}>Total Travel Budget</Text>
           <TextField
             forwardedRef={this.totalBudgetInput}
             style={{ paddingVertical: 0 }}
@@ -368,7 +433,7 @@ class SetBudget extends Component<Props, UserInformation, extrainfo> {
             onSubmitEditing={() => this.cityInput.current.focus()}
           />
 
-          <Text style={styles.textStyle}>For which city you want to travel ?</Text>
+          <Text style={styles.textStyle}>What City?</Text>
           <TextField
             forwardedRef={this.cityInput}
             style={{ paddingVertical: 0 }}
@@ -407,6 +472,7 @@ export default connect(
   state => ({
     user: state.user,
     travel: state.travel,
+    budget: state.budget
   }),
-  { setBudgeInfo, setTravelPreferences, editPreferences },
+  { setBudgeInfo, setTravelPreferences, editPreferences, setBudgetLogEvents },
 )(SetBudget)

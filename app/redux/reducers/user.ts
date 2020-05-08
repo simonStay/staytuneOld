@@ -7,6 +7,8 @@ import {
   FORGOT_PASSWORD,
   LOADER,
   SIGN_OUT,
+  SAVE_LOCATION_LOGS,
+  USER_CURRENT_LOCATION
 } from "../actions/user"
 
 export default function user(state = {}, action) {
@@ -57,6 +59,16 @@ export default function user(state = {}, action) {
       return {
         loader: false,
         user: {},
+      }
+    case SAVE_LOCATION_LOGS:
+      return {
+        ...state,
+        userLocationLogs: action.payload,
+      }
+    case USER_CURRENT_LOCATION:
+      return {
+        ...state,
+        userCurrentLocation: action.payload
       }
   }
   return state

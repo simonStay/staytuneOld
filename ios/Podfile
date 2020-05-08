@@ -3,6 +3,10 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 target 'StayTune' do
   # Pods for StayTune
+  # add the Firebase pod for Google Analytics
+pod 'Firebase/Analytics'
+# add pods for any other desired Firebase products
+# https://firebase.google.com/docs/ios/setup#available-pods
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
@@ -16,6 +20,7 @@ target 'StayTune' do
   pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text'
   pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration'
   pod 'React-RCTWebSocket', :path => '../node_modules/react-native/Libraries/WebSocket'
+  pod 'rn-fetch-blob', :path => '../node_modules/rn-fetch-blob'
 
   pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
   pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
@@ -29,7 +34,10 @@ target 'StayTune' do
 
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
 
+  pod 'React-ART', :path => '../node_modules/react-native/Libraries/ART'
+  
   pod 'react-native-google-maps', :path => '../node_modules/react-native-maps'  # Uncomment this line if you want to support GoogleMaps on iOS
+  pod 'react-native-google-places', :path => '../node_modules/react-native-google-places'
   pod 'GoogleMaps'  # Uncomment this line if you want to support GoogleMaps on iOS
   pod 'Google-Maps-iOS-Utils' # Uncomment this line if you want to support GoogleMaps on iOS
 
@@ -39,6 +47,24 @@ target 'StayTune' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+
+  pod 'react-native-onesignal', :path => '../node_modules/react-native-onesignal'
+  
+  pod '@mauron85_react-native-background-geolocation', :path => '../node_modules/@mauron85/react-native-background-geolocation'
+
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      if target.name == "React"
+        target.remove_from_project
+      end
+    end
+  end
+
+  # target 'OneSignalNotificationServiceExtension' do
+  #   pod 'OneSignal', '>= 2.9.3', '< 3.0'
+  # end
 
   target 'StayTuneTests' do
     inherit! :search_paths

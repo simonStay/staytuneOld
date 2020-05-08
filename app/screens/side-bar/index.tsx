@@ -11,7 +11,7 @@ import { connect } from "react-redux"
 
 const MenuItems = [
     { id: 0, type: "Start a plan", icon: "startplan" },
-    { id: 1, type: "Itinerary suggestions", icon: "travelsuggestions" },
+    //{ id: 1, type: "Itinerary suggestions", icon: "travelsuggestions" },
     { id: 2, type: "Travel preference", icon: "preference" },
     { id: 3, type: "Digital souvenir", icon: "souvenir" },
     { id: 4, type: "Select tour guide", icon: "tourguide" },
@@ -45,7 +45,7 @@ class SideBar extends Component<Props, sideMenuItems, {}> {
         //console.log('nextProps_123:', nextProps.user.userDetails)
         try {
             let userDetails = await this.props.userProfileInfo
-            console.log('sidebar_componentDidMount:', this.props.userProfileInfo)
+            //console.log('sidebar_componentDidMount:', this.props.userProfileInfo)
             if (userDetails.profilePic == undefined || userDetails.profilePic == "undefined") {
             } else {
                 await this.setState({
@@ -69,7 +69,7 @@ class SideBar extends Component<Props, sideMenuItems, {}> {
         //console.log('nextProps_123:', nextProps.user.userDetails)
         try {
             let userDetails = await nextProps.userProfileInfo
-            console.log('nextProps_123_component:', nextProps.userProfileInfo)
+            // console.log('nextProps_123_component:', nextProps.userProfileInfo)
             if (userDetails.profilePic == undefined || userDetails.profilePic == "undefined") {
             } else {
                 await this.setState({
@@ -86,7 +86,6 @@ class SideBar extends Component<Props, sideMenuItems, {}> {
         } catch (error) {
             console.log("error_123:", error)
         }
-
     }
 
     onEditProfile() {
@@ -126,7 +125,6 @@ class SideBar extends Component<Props, sideMenuItems, {}> {
             </TouchableOpacity>
         )
     }
-
     render() {
         return (
             <View style={styles.container}>

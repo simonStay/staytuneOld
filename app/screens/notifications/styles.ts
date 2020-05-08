@@ -9,24 +9,25 @@ const styles = StyleSheet.create({
   },
   wallpaper: { flex: 1 },
   innerContainer: {
-    marginHorizontal: 10,
-    marginTop: 10
+    flex: 1,
+    marginHorizontal: dimensions.width * 0.0246,
+    marginTop: dimensions.width * 0.016
   },
   innerCardView: {
     backgroundColor: 'white',
     flexDirection: 'column',
-    padding: 10
+    padding: dimensions.width * 0.036
   },
   notificationView: { flexDirection: 'row' },
   notificationText: {
     color: color.lightLine,
     fontSize: fontsize.notificationText,
-    alignSelf: "center",
     fontFamily: "OpenSans-semibold",
     textShadowColor: color.textColor,
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 0,
-    marginTop: 6
+    textAlign: 'justify',
+    marginTop: dimensions.width * 0.016
   },
   iconView: {
     width: dimensions.width * 0.146,
@@ -63,6 +64,10 @@ const styles = StyleSheet.create({
     textShadowRadius: 0,
   },
   scrollContainer: { flex: 1, justifyContent: "center" },
+  lottie: {
+    width: 100,
+    height: 100,
+  },
 })
 
 export default styles

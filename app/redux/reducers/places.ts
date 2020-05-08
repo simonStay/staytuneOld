@@ -2,7 +2,8 @@ import { LOADER_LOCATIONS, TOURIST_LOCATIONS, FILTERED_LOCATIONS } from "./../ac
 
 import { PLACES_SIGN_OUT } from "./../actions/user"
 
-export default function places(state = {}, action) {
+export default function places(state = { touristLocations: [], loader: false, filteredLocations: [] }, action) {
+  // console.log("locations_123", JSON.stringify(state.touristLocations))
   switch (action.type) {
     case TOURIST_LOCATIONS:
       return {
@@ -18,6 +19,7 @@ export default function places(state = {}, action) {
     case FILTERED_LOCATIONS:
       return {
         ...state,
+        touristLocations: state.touristLocations.concat(action.payload),
         filteredLocations: action.payload
       }
     case PLACES_SIGN_OUT:

@@ -8,8 +8,8 @@ export const USER_SAVED_LOCATIONS = "USER_SAVED_LOCATIONS"
 export const SET_TRAVEL_INFO = "SET_TRAVEL_INFO"
 export const UPDATE_TRAVEL_PREFERENCE = "UPDATE_TRAVEL_PREFERENCE"
 export const GET_PREFERENCES_BY_ID = "GET_PREFERENCES_BY_ID"
-export const SELECT_TOUR_GUIDE = "SELECT_TOUR_GUIDE"
 export const EDIT_TRAVEL_PREFERENCE = "EDIT_TRAVEL_PREFERENCE"
+export const GET_GUIDE_BY_ID = "GET_GUIDE_BY_ID"
 
 const STAYTUNELIVEURL = "https://staytune.austinconversionoptimization.com"
 
@@ -53,7 +53,7 @@ export function setBudgeInfo(setTravelBudget) {
 }
 
 export function setTravelPreferences(setTravelBudget) {
-  console.log("setTravelBudget.selectedCategories_123:", setTravelBudget.selectedCategories)
+  console.log("setTravelBudget.selectedCategories_123:" + JSON.stringify(setTravelBudget))
   return async dispatch => {
     dispatch({
       type: LOADER_TRAVEL,
@@ -85,7 +85,7 @@ export function setTravelPreferences(setTravelBudget) {
 }
 
 export function editPreferences(setTravelBudget) {
-  console.log("editPreferences_123:", setTravelBudget)
+  console.log("editPreferences_123:" + JSON.stringify(setTravelBudget))
   return async dispatch => {
     dispatch({
       type: LOADER_TRAVEL,
@@ -117,7 +117,7 @@ export function editPreferences(setTravelBudget) {
 }
 
 export function updateTravelPreferences(setTravelBudget) {
-  console.log("setTravelBudget.selectedCategories_123:", setTravelBudget.userId + 'preferenceId:' + setTravelBudget.preferenceId + ',,,,,,,,,,,,' + setTravelBudget.selectedCategories)
+  console.log("setTravelBudget.selectedCategories_123:" + JSON.stringify(setTravelBudget))
   return async dispatch => {
     dispatch({
       type: LOADER_TRAVEL,
@@ -136,7 +136,7 @@ export function updateTravelPreferences(setTravelBudget) {
       },
     )
     const body = await resToBody(res)
-    // console.log("body_123:", body)
+    console.log("body_123:", body)
     return dispatch({
       type: UPDATE_TRAVEL_PREFERENCE,
       payload: body,
@@ -189,14 +189,23 @@ export function userSavedLocations(userId) {
   }
 }
 
-export function selectedTourGuide(guideInfo) {
+export function getTourGuideById(guideId) {
   return async dispatch => {
-    dispatch({
-      type: SELECT_TOUR_GUIDE,
-      payload: guideInfo,
+    const res = await fetch(STAYTUNELIVEURL + `/travel-guides/` + guideId, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    const body = await resToBody(res)
+    // console.log("body_123:", body)
+    return dispatch({
+      type: GET_GUIDE_BY_ID,
+      payload: body,
     })
   }
 }
+
 
 export default {
   travelPreferenceTypes,
@@ -205,9 +214,9 @@ export default {
   userSavedLocations,
   setBudgeInfo,
   updateTravelPreferences,
-  selectedTourGuide,
   getPreferencesById,
   editPreferences,
+  getTourGuideById,
   SELECTED_TRAVEL_PREFERENCE,
   TRAVEL_PREFERENCE_TYPES,
   SET_TRAVEL_PREFERENCE,
@@ -217,6 +226,6 @@ export default {
   SET_TRAVEL_INFO,
   UPDATE_TRAVEL_PREFERENCE,
   GET_PREFERENCES_BY_ID,
-  SELECT_TOUR_GUIDE,
+  GET_GUIDE_BY_ID,
   EDIT_TRAVEL_PREFERENCE
 }

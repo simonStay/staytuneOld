@@ -1,6 +1,7 @@
 import * as React from "react"
-import { View, ViewStyle, Text, TextStyle } from "react-native"
+import { View, ViewStyle, TextStyle } from "react-native"
 import { spacing, fontsize, dimensions, color } from "../../theme"
+import { Text } from "./../text"
 
 import RadioForm, {
   RadioButton,
@@ -56,6 +57,7 @@ export const RadioButtonView: React.FunctionComponent<RadioButtonProps> = props 
                   buttonSize={dimensions.width * 0.046}
                   buttonStyle={{}}
                   buttonWrapStyle={{ alignSelf: "center", marginLeft: dimensions.width * 0.014 }}
+                  allowFontScaling={false}
                 />
                 <RadioButtonLabel
                   obj={obj}
@@ -70,6 +72,7 @@ export const RadioButtonView: React.FunctionComponent<RadioButtonProps> = props 
                     color: "#000",
                   }}
                   labelWrapStyle={{}}
+                  allowFontScaling={false}
                 />
               </RadioButton>
             )

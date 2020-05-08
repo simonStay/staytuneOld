@@ -13,16 +13,16 @@ interface Props {
 }
 
 class Splash extends Component<Props, {}> {
-  componentDidMount() {
+
+  async componentDidMount() {
     let self = this
-    setTimeout(function() {
-      if (self.props.user.login !== undefined && self.props.user.login.verified !== undefined) {
-        if (self.props.user.login.verified && self.props.user.login.id != undefined) {
+    setTimeout(function () {
+      if ((self.props.user.login !== undefined && self.props.user.login.verified !== undefined) || (self.props.user.register !== undefined && self.props.user.userProfileInfo.data != undefined && self.props.user.userProfileInfo.data.verified !== undefined)) {
+        if ((self.props.user.login !== undefined && self.props.user.login.verified && self.props.user.login.id != undefined) || (self.props.user.userProfileInfo.data.verified && self.props.user.register.id != undefined)) {
           self.props.navigation.push("MainScreen", {
-            userId: self.props.user.login.id,
-            token: self.props.user.login.token,
+            userId: self.props.user.login != undefined ? self.props.user.login.id : self.props.user.userProfileInfo.data.id,
             selectedValue: "Start a plan",
-            headerTitle: "STAY TUNE",
+            headerTitle: "STAYTUNE",
             tabId: 2,
           })
         } else {
@@ -32,7 +32,7 @@ class Splash extends Component<Props, {}> {
         // alert("else")
         self.props.navigation.push("Login")
       }
-    }, 3000)
+    }, 5000)
   }
   render() {
     return (

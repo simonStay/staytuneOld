@@ -43,6 +43,7 @@ export interface HeaderProps {
   titleStyle?: TextStyle
 
   rightText?: string,
+  from?: string,
 
   rightTextStyle?: TextStyle,
 }

@@ -11,15 +11,22 @@ import { Button } from "../../components/button"
 import { color } from "../../theme"
 
 import { connect } from "react-redux"
-import { signUp } from "../../redux/actions/user"
+import { signUp, updateUserLocation } from "../../redux/actions/user"
 import PropTypes from "prop-types"
 import AnimatedLoader from "react-native-animated-loader"
+import DeviceInfo from 'react-native-device-info'
+import OneSignal from 'react-native-onesignal';
+import Geolocation from "@react-native-community/geolocation"
+import moment from "moment"
+import firebase from 'react-native-firebase';
+let Analytics = firebase.analytics();
 
 interface Props {
   navigation: NavigationScreenProp<NavigationState>
   user: any
   signUp: any
   loader: any
+  updateUserLocation: any
 }
 interface userDetails {
   firstName: string
@@ -27,6 +34,11 @@ interface userDetails {
   email: string
   password: string
   zip: string
+  deviceId: any
+  latitude: any
+  longitude: any
+  latitudeDelta: any
+  longitudeDelta: any
 }
 
 class Register extends Component<Props, userDetails> {
@@ -41,11 +53,27 @@ class Register extends Component<Props, userDetails> {
       zip: "",
       email: "",
       password: "",
+      deviceId: "",
+      latitude: null,
+      longitude: null,
+      latitudeDelta: null,
+      longitudeDelta: null
     }
     this.lastNameInput = React.createRef()
     this.zip = React.createRef()
     this.emailInput = React.createRef()
     this.passwordInput = React.createRef()
+  }
+
+  async componentWillMount() {
+    await OneSignal.addEventListener('ids', this.onIds.bind(this));
+  }
+
+  async onIds(device) {
+    console.log('deviceId_register: ', device.userId);
+    this.setState({
+      deviceId: device.userId
+    });
   }
 
   validateEmail = email => {
@@ -107,8 +135,8 @@ class Register extends Component<Props, userDetails> {
         { cancelable: false },
       )
     } else {
-      const { firstName, lastName, email, password, zip } = this.state
-      await this.props.signUp(firstName, lastName, email, password, zip)
+      const { firstName, lastName, email, password, zip, deviceId } = this.state
+      await this.props.signUp(firstName, lastName, email, password, zip, deviceId)
       if (this.props.user.status == "failed") {
         {
           /* Note: this is Temporary solution alert is not diplaying after animation making for that 
@@ -123,6 +151,28 @@ class Register extends Component<Props, userDetails> {
           )
         }, 100)
       } else if (this.props.user.status == "success") {
+        Geolocation.getCurrentPosition(async (position) => {
+          console.log("position_123", JSON.stringify(position))
+          this.setState({
+            latitude: await position.coords.latitude,
+            longitude: await position.coords.longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          })
+          let locationInfo = {
+            userId: await this.props.user.id,
+            lat: await parseFloat(this.state.latitude),
+            long: await parseFloat(this.state.longitude),
+            date: moment().format("DD-MM-YYYYThh:mm:ss")
+          }
+          await console.log("position_locationInfo_123", JSON.stringify(locationInfo))
+          await this.props.updateUserLocation(locationInfo)
+        })
+        Analytics.setAnalyticsCollectionEnabled(true);
+        Analytics.logEvent('SignUp', {
+          group_id: 'Register',
+          score: 1
+        })
         let self = this
         setTimeout(() => {
           Alert.alert(
@@ -260,5 +310,6 @@ export default connect(
   }),
   {
     signUp,
+    updateUserLocation
   },
 )(Register)

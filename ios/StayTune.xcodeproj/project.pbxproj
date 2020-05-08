@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* StayTuneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* StayTuneTests.m */; };
+		09B632A5BFA64018940B1704 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13A7DA0726DB40AEAC063E12 /* FontAwesome.ttf */; };
+		0B8ED6764B4F41778C39EAF9 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4766508731642B7AA32508C /* Entypo.ttf */; };
 		0F4E54BAC8F44B75B93C558E /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 407AAB51E5294451A3019284 /* Montserrat-ThinItalic.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
@@ -16,28 +18,43 @@
 		22DB246CEA394A5FA948AF05 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5834AA0BC0174195AD0B7295 /* Montserrat-Regular.ttf */; };
 		2841E4A7E8DB451D8ED1AF15 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1FA8F976469414AB4DD5CB5 /* Montserrat-SemiBoldItalic.ttf */; };
 		291C76E1171E4F97B0C7D989 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D206D8FE6F7D48D6A44977A7 /* Montserrat-ExtraBold.ttf */; };
+		2A16E080C1174EDA8CC59D81 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A585023C5E64456C895BCB1C /* rubicon-icon-font.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D18AFE823508E5600CB3E51 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18AFE723508E5600CB3E51 /* File.swift */; };
+		2D917B1A23E926D800D63A1C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D917B1923E926D800D63A1C /* GoogleService-Info.plist */; };
 		2DCD954D1E0B4F2C00145EB5 /* StayTuneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* StayTuneTests.m */; };
 		398E71E134FF49F0B8013052 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C433AA68F214BD8ADDAFDFF /* Montserrat-LightItalic.ttf */; };
+		3CF2979EDC4745AA9F1A793F /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0F3231A2AFC46E19E686C1C /* FontAwesome5_Brands.ttf */; };
 		3DC571E35F6046C88D24C9F9 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D35990A82B6C4B8B855F2A6D /* Montserrat-Medium.ttf */; };
 		3F9C3CCF8C9B4665AAE97D07 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 973F7EE3084F474FA753EDB2 /* MaterialCommunityIcons.ttf */; };
+		41E7924ADCB04FF6A71EE768 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68722C2131E94317851056BC /* Foundation.ttf */; };
 		46CF2266A3AC491BBAAA7502 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC174A441B7745158ECC4FDA /* Montserrat-Thin.ttf */; };
 		4A6E8F7EBE084EFCA5B1FF4F /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8406E104EAA648728A21874D /* Montserrat-ExtraLightItalic.ttf */; };
 		4F0846D26BB74D7C8D424115 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4D5D35008B46AB8B5E022C /* Montserrat-Italic.ttf */; };
 		559CB2082B35434CB2D702B7 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB272635614C47F1AAF06389 /* Montserrat-Bold.ttf */; };
+		55EF77192097423786BB0883 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA44149746C74BE08B58D8C5 /* AntDesign.ttf */; };
+		56518B66ECB444F2B9EF30A4 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23AADF8062334CEE9803C65D /* SimpleLineIcons.ttf */; };
 		659BC45CDB3743EB8FEB1C56 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1572918FE6C44345AEC35DF1 /* Montserrat-ExtraLight.ttf */; };
+		68E0EDA8E4D641438C7BAF4B /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C2676075A654EF2A7495BEE /* MaterialCommunityIcons.ttf */; };
 		6E8C417E4375EB45E0BD9C2D /* libPods-StayTune-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7A8B85671EB30626C50853 /* libPods-StayTune-tvOSTests.a */; };
+		71525A70F08D4E53A586C921 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1199BDC6D7F453FA7A5CDC5 /* Ionicons.ttf */; };
 		71E2DF65D3DB4BBF90ED36D0 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A29A96689C24421CBF6C7669 /* EvilIcons.ttf */; };
+		75A8C50653D74059B43849EB /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E02EC4D9FC14B73AD71C8C8 /* EvilIcons.ttf */; };
 		7DDF9E140DF3471FBE159341 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D564B4AA68D74156825F6563 /* Montserrat-BoldItalic.ttf */; };
+		851D8488E26745429BD03B40 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9BD3ACE189E4E3DB77E7AC3 /* Octicons.ttf */; };
 		85467A2897BC454DB0B9478C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31A98FB923A24DC9879BC6B0 /* FontAwesome.ttf */; };
 		85D564E147AF42E2BB883E36 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59B9D26DBA0C474E9A6E820B /* Ionicons.ttf */; };
+		8945014A725E47F8BCD59705 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B43F22432E14AEF9A3C903D /* MaterialIcons.ttf */; };
 		895E298F234B4C57BB81CFA8 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97102D8BB0CF49EE8C37C8C4 /* Montserrat-MediumItalic.ttf */; };
+		8C7F6B64D4BC4C0197EAFE87 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3464BC6B574B04A42750E4 /* FontAwesome5_Solid.ttf */; };
 		8F3CF9189D4E4B46A1849B8B /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A92008A247D43D39C41F530 /* Fontisto.ttf */; };
+		9251730FAB094BBBB82A0AC0 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C60CDC2BEDBB485BAFFAD8D6 /* Feather.ttf */; };
 		980B3591E30243498586DC65 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795856CB2F5D48438420910F /* Feather.ttf */; };
+		A5B8BE2C9CD54221B967B447 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A55C9B8AF3B4C3A97308816 /* Fontisto.ttf */; };
 		A8C6830761C34FA1BC9333D6 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50D8430440AD44F7ACC229A0 /* FontAwesome5_Regular.ttf */; };
+		B3312E8590C7482FBBC64DAC /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AD84EB5B794A4997C88D17 /* Roboto_medium.ttf */; };
 		BAC838CDB5BF4A4C9A2D18FD /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C9A169349DF45D79550E427 /* Montserrat-Black.ttf */; };
 		C4A83038BE346634EE3A17C2 /* libPods-StayTune.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB7F6DD3E3ADEAF5629C0C02 /* libPods-StayTune.a */; };
 		CB4A575EA34D478FBD78558B /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CB9AC6113924917A36EFBB5 /* Montserrat-ExtraBoldItalic.ttf */; };
@@ -46,6 +63,8 @@
 		D3517ED24E894B85A90B65B8 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2301220830164A6FA41005C7 /* FontAwesome5_Solid.ttf */; };
 		D5571925469745D9942B3AF2 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69A778F0F417440F97DD7731 /* Octicons.ttf */; };
 		D9DCD6F3811F4618B10F6F51 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7509DF9DEAC24DB68B19FE65 /* AntDesign.ttf */; };
+		DB16002823754EC5007577D1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16002723754EC5007577D1 /* NotificationService.swift */; };
+		DB16002C23754EC5007577D1 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB16002523754EC5007577D1 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DB1623AC2356DE7900BED264 /* libReact-RCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1623AB2356DE7900BED264 /* libReact-RCTBlob.a */; };
 		DB16E30A2361B3D40089F435 /* libreact-native-image-picker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB16E3092361B3D40089F435 /* libreact-native-image-picker.a */; };
 		DB4D79C92345BAC300406802 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB4D79BF2345BAB800406802 /* OpenSans-BoldItalic.ttf */; };
@@ -63,8 +82,11 @@
 		DBFE081C23421C0C004492EC /* libreact-native-google-maps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFE081B23421C0C004492EC /* libreact-native-google-maps.a */; };
 		DE29AF23119E491C97D2BBE0 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 230A0B34C36C4A16887B74C9 /* Zocial.ttf */; };
 		DE8BDA40C4314233A55025D6 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6C21E4F29A4496A899320A5 /* Montserrat-SemiBold.ttf */; };
+		E01B905BE0834AC38F1FF149 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B17D111005E40E8BCB91390 /* Roboto.ttf */; };
 		E1A5F00F77994568A2A9B0DA /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2017F6E775E8470FB4C19EF9 /* SimpleLineIcons.ttf */; };
 		E98C79E80B06836B42E4BB2B /* libPods-StayTune-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF77A0F6F537F0D69EBA6FB0 /* libPods-StayTune-tvOS.a */; };
+		E9DBBBE7415A4847AA2C84CE /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A15DBF8FA2E14CF0B5B3602C /* FontAwesome5_Regular.ttf */; };
+		F078A33C03AE4BEBA7E127C7 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4ECFE470D434966B3F422FA /* Zocial.ttf */; };
 		F438AC0B0E1841BA81DB1990 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1515A929E8C742E4B591E557 /* Entypo.ttf */; };
 		F5E03B9115584A308BC15DA2 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6C1B243C44544458CCA9780 /* Foundation.ttf */; };
 		FA27181951BE4AD48F1359C4 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF2F698D24844BF9888D0D9A /* MaterialIcons.ttf */; };
@@ -86,7 +108,28 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "StayTune-tvOS";
 		};
+		DB16002A23754EC5007577D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB16002423754EC5007577D1;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB16003023754EC5007577D1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DB16002C23754EC5007577D1 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -95,7 +138,9 @@
 		00E356F21AD99517003FC87E /* StayTuneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StayTuneTests.m; sourceTree = "<group>"; };
 		0776DA8AA87B815308989954 /* Pods-StayTune.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayTune.release.xcconfig"; path = "Target Support Files/Pods-StayTune/Pods-StayTune.release.xcconfig"; sourceTree = "<group>"; };
 		0A92008A247D43D39C41F530 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		0C2676075A654EF2A7495BEE /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		0C9A169349DF45D79550E427 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Black.ttf"; path = "../app/theme/fonts/Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		13A7DA0726DB40AEAC063E12 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* StayTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = StayTune/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = StayTune/AppDelegate.m; sourceTree = "<group>"; };
@@ -109,13 +154,16 @@
 		2017F6E775E8470FB4C19EF9 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		2301220830164A6FA41005C7 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		230A0B34C36C4A16887B74C9 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		23AADF8062334CEE9803C65D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		2757E88E392BF8880768526F /* Pods-StayTune.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayTune.debug.xcconfig"; path = "Target Support Files/Pods-StayTune/Pods-StayTune.debug.xcconfig"; sourceTree = "<group>"; };
+		2A55C9B8AF3B4C3A97308816 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/native-base/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		2A7A8B85671EB30626C50853 /* libPods-StayTune-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StayTune-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B728B64AC1091FAA8A69AEC /* Pods-StayTune-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayTune-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-StayTune-tvOSTests/Pods-StayTune-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* StayTune-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StayTune-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* StayTune-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StayTune-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D18AFE623508E5500CB3E51 /* StayTune-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StayTune-Bridging-Header.h"; sourceTree = "<group>"; };
 		2D18AFE723508E5600CB3E51 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		2D917B1923E926D800D63A1C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31A98FB923A24DC9879BC6B0 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		398C550342A156D4F571E2BB /* Pods-StayTuneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayTuneTests.release.xcconfig"; path = "Target Support Files/Pods-StayTuneTests/Pods-StayTuneTests.release.xcconfig"; sourceTree = "<group>"; };
 		407AAB51E5294451A3019284 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ThinItalic.ttf"; path = "../app/theme/fonts/Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
@@ -125,25 +173,41 @@
 		5834AA0BC0174195AD0B7295 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../app/theme/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		59B9D26DBA0C474E9A6E820B /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		5F4D5D35008B46AB8B5E022C /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Italic.ttf"; path = "../app/theme/fonts/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		68722C2131E94317851056BC /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		69A778F0F417440F97DD7731 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		6D3A03A36A905F4493097974 /* libPods-StayTuneTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StayTuneTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7509DF9DEAC24DB68B19FE65 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		795856CB2F5D48438420910F /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		7B43F22432E14AEF9A3C903D /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		80CCAB7FEB894A18AC26C6C7 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		8406E104EAA648728A21874D /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraLightItalic.ttf"; path = "../app/theme/fonts/Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		87A552ECBE7BFFBFB9C1254F /* Pods-StayTune-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayTune-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-StayTune-tvOSTests/Pods-StayTune-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B17D111005E40E8BCB91390 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
+		8E02EC4D9FC14B73AD71C8C8 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		97102D8BB0CF49EE8C37C8C4 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-MediumItalic.ttf"; path = "../app/theme/fonts/Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
 		973F7EE3084F474FA753EDB2 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		9C433AA68F214BD8ADDAFDFF /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-LightItalic.ttf"; path = "../app/theme/fonts/Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		A15DBF8FA2E14CF0B5B3602C /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		A29A96689C24421CBF6C7669 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		A585023C5E64456C895BCB1C /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
+		A9BD3ACE189E4E3DB77E7AC3 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		B1BC2F9EB478E4C33564C1CA /* Pods-StayTune-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayTune-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-StayTune-tvOS/Pods-StayTune-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B4766508731642B7AA32508C /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		B8AD84EB5B794A4997C88D17 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		BB7F6DD3E3ADEAF5629C0C02 /* libPods-StayTune.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StayTune.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2F698D24844BF9888D0D9A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		C60CDC2BEDBB485BAFFAD8D6 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		C6C21E4F29A4496A899320A5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../app/theme/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		D1199BDC6D7F453FA7A5CDC5 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		D1FA8F976469414AB4DD5CB5 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBoldItalic.ttf"; path = "../app/theme/fonts/Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		D206D8FE6F7D48D6A44977A7 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBold.ttf"; path = "../app/theme/fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		D35990A82B6C4B8B855F2A6D /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../app/theme/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		D564B4AA68D74156825F6563 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-BoldItalic.ttf"; path = "../app/theme/fonts/Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		DA44149746C74BE08B58D8C5 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		DB16002023754DFD007577D1 /* StayTune.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = StayTune.entitlements; path = StayTune/StayTune.entitlements; sourceTree = "<group>"; };
+		DB16002523754EC5007577D1 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB16002723754EC5007577D1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		DB16002923754EC5007577D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB1623AB2356DE7900BED264 /* libReact-RCTBlob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-RCTBlob.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB16E3092361B3D40089F435 /* libreact-native-image-picker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-image-picker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4D79BF2345BAB800406802 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "../app/theme/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -159,12 +223,15 @@
 		DBFE081923421C03004492EC /* libreact-native-maps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-maps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFE081B23421C0C004492EC /* libreact-native-google-maps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-google-maps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC174A441B7745158ECC4FDA /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Thin.ttf"; path = "../app/theme/fonts/Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		DE3464BC6B574B04A42750E4 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		E20259E2BCE68C3EBB7A94C9 /* Pods-StayTuneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayTuneTests.debug.xcconfig"; path = "Target Support Files/Pods-StayTuneTests/Pods-StayTuneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4ECFE470D434966B3F422FA /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		E6C1B243C44544458CCA9780 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		EB272635614C47F1AAF06389 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../app/theme/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EDD0FFAD13FF4508AD903771 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-BlackItalic.ttf"; path = "../app/theme/fonts/Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F0F3231A2AFC46E19E686C1C /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		FF77A0F6F537F0D69EBA6FB0 /* libPods-StayTune-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StayTune-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -205,6 +272,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB16002223754EC5007577D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -228,6 +302,8 @@
 		13B07FAE1A68108700A75B9A /* StayTune */ = {
 			isa = PBXGroup;
 			children = (
+				2D917B1923E926D800D63A1C /* GoogleService-Info.plist */,
+				DB16002023754DFD007577D1 /* StayTune.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -293,6 +369,25 @@
 				69A778F0F417440F97DD7731 /* Octicons.ttf */,
 				2017F6E775E8470FB4C19EF9 /* SimpleLineIcons.ttf */,
 				230A0B34C36C4A16887B74C9 /* Zocial.ttf */,
+				DA44149746C74BE08B58D8C5 /* AntDesign.ttf */,
+				B4766508731642B7AA32508C /* Entypo.ttf */,
+				8E02EC4D9FC14B73AD71C8C8 /* EvilIcons.ttf */,
+				C60CDC2BEDBB485BAFFAD8D6 /* Feather.ttf */,
+				13A7DA0726DB40AEAC063E12 /* FontAwesome.ttf */,
+				F0F3231A2AFC46E19E686C1C /* FontAwesome5_Brands.ttf */,
+				A15DBF8FA2E14CF0B5B3602C /* FontAwesome5_Regular.ttf */,
+				DE3464BC6B574B04A42750E4 /* FontAwesome5_Solid.ttf */,
+				2A55C9B8AF3B4C3A97308816 /* Fontisto.ttf */,
+				68722C2131E94317851056BC /* Foundation.ttf */,
+				D1199BDC6D7F453FA7A5CDC5 /* Ionicons.ttf */,
+				0C2676075A654EF2A7495BEE /* MaterialCommunityIcons.ttf */,
+				7B43F22432E14AEF9A3C903D /* MaterialIcons.ttf */,
+				A9BD3ACE189E4E3DB77E7AC3 /* Octicons.ttf */,
+				B8AD84EB5B794A4997C88D17 /* Roboto_medium.ttf */,
+				8B17D111005E40E8BCB91390 /* Roboto.ttf */,
+				A585023C5E64456C895BCB1C /* rubicon-icon-font.ttf */,
+				23AADF8062334CEE9803C65D /* SimpleLineIcons.ttf */,
+				E4ECFE470D434966B3F422FA /* Zocial.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -321,6 +416,7 @@
 				13B07FAE1A68108700A75B9A /* StayTune */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* StayTuneTests */,
+				DB16002623754EC5007577D1 /* OneSignalNotificationServiceExtension */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A8F8BA5C802FD448131968CF /* Pods */,
@@ -339,6 +435,7 @@
 				00E356EE1AD99517003FC87E /* StayTuneTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* StayTune-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* StayTune-tvOSTests.xctest */,
+				DB16002523754EC5007577D1 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -356,6 +453,15 @@
 				398C550342A156D4F571E2BB /* Pods-StayTuneTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DB16002623754EC5007577D1 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DB16002723754EC5007577D1 /* NotificationService.swift */,
+				DB16002923754EC5007577D1 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,10 +497,12 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				EEBF0109BFAFF0A2F2957097 /* [CP] Copy Pods Resources */,
+				DB16003023754EC5007577D1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB16002B23754EC5007577D1 /* PBXTargetDependency */,
 			);
 			name = StayTune;
 			productName = StayTune;
@@ -440,29 +548,56 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* StayTune-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DB16002423754EC5007577D1 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB16002D23754EC5007577D1 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				DB16002123754EC5007577D1 /* Sources */,
+				DB16002223754EC5007577D1 /* Frameworks */,
+				DB16002323754EC5007577D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = DB16002523754EC5007577D1 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 8979SHK755;
+						ProvisioningStyle = Manual;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 8979SHK755;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8979SHK755;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -470,9 +605,14 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
+					DB16002423754EC5007577D1 = {
+						CreatedOnToolsVersion = 10.2.1;
+						DevelopmentTeam = 8979SHK755;
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "staytune" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "StayTune" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -490,6 +630,7 @@
 				00E356ED1AD99517003FC87E /* StayTuneTests */,
 				2D02E47A1E0B4A5D006451C7 /* StayTune-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* StayTune-tvOSTests */,
+				DB16002423754EC5007577D1 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -547,11 +688,31 @@
 				8F3CF9189D4E4B46A1849B8B /* Fontisto.ttf in Resources */,
 				F5E03B9115584A308BC15DA2 /* Foundation.ttf in Resources */,
 				85D564E147AF42E2BB883E36 /* Ionicons.ttf in Resources */,
+				2D917B1A23E926D800D63A1C /* GoogleService-Info.plist in Resources */,
 				3F9C3CCF8C9B4665AAE97D07 /* MaterialCommunityIcons.ttf in Resources */,
 				FA27181951BE4AD48F1359C4 /* MaterialIcons.ttf in Resources */,
 				D5571925469745D9942B3AF2 /* Octicons.ttf in Resources */,
 				E1A5F00F77994568A2A9B0DA /* SimpleLineIcons.ttf in Resources */,
 				DE29AF23119E491C97D2BBE0 /* Zocial.ttf in Resources */,
+				55EF77192097423786BB0883 /* AntDesign.ttf in Resources */,
+				0B8ED6764B4F41778C39EAF9 /* Entypo.ttf in Resources */,
+				75A8C50653D74059B43849EB /* EvilIcons.ttf in Resources */,
+				9251730FAB094BBBB82A0AC0 /* Feather.ttf in Resources */,
+				09B632A5BFA64018940B1704 /* FontAwesome.ttf in Resources */,
+				3CF2979EDC4745AA9F1A793F /* FontAwesome5_Brands.ttf in Resources */,
+				E9DBBBE7415A4847AA2C84CE /* FontAwesome5_Regular.ttf in Resources */,
+				8C7F6B64D4BC4C0197EAFE87 /* FontAwesome5_Solid.ttf in Resources */,
+				A5B8BE2C9CD54221B967B447 /* Fontisto.ttf in Resources */,
+				41E7924ADCB04FF6A71EE768 /* Foundation.ttf in Resources */,
+				71525A70F08D4E53A586C921 /* Ionicons.ttf in Resources */,
+				68E0EDA8E4D641438C7BAF4B /* MaterialCommunityIcons.ttf in Resources */,
+				8945014A725E47F8BCD59705 /* MaterialIcons.ttf in Resources */,
+				851D8488E26745429BD03B40 /* Octicons.ttf in Resources */,
+				B3312E8590C7482FBBC64DAC /* Roboto_medium.ttf in Resources */,
+				E01B905BE0834AC38F1FF149 /* Roboto.ttf in Resources */,
+				2A16E080C1174EDA8CC59D81 /* rubicon-icon-font.ttf in Resources */,
+				56518B66ECB444F2B9EF30A4 /* SimpleLineIcons.ttf in Resources */,
+				F078A33C03AE4BEBA7E127C7 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +725,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB16002323754EC5007577D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -697,6 +865,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StayTune/Pods-StayTune-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -717,6 +886,7 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -815,6 +985,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB16002123754EC5007577D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB16002823754EC5007577D1 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -827,6 +1005,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* StayTune-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		DB16002B23754EC5007577D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB16002423754EC5007577D1 /* OneSignalNotificationServiceExtension */;
+			targetProxy = DB16002A23754EC5007577D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -849,6 +1032,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8979SHK755;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -863,6 +1049,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StayTune.app/StayTune";
 			};
 			name = Debug;
@@ -873,7 +1061,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8979SHK755;
 				INFOPLIST_FILE = StayTuneTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -884,6 +1075,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StayTune.app/StayTune";
 			};
 			name = Release;
@@ -895,9 +1088,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = StayTune/StayTune.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1.5;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8979SHK755;
 				INFOPLIST_FILE = StayTune/Info.plist;
@@ -909,7 +1104,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nueve.staytune;
 				PRODUCT_NAME = StayTune;
-				PROVISIONING_PROFILE_SPECIFIER = staytune_provisionalprofile_Nov6th2019;
+				PROVISIONING_PROFILE_SPECIFIER = stayTune_appstore_provisionalProfile_04022020;
 				SWIFT_OBJC_BRIDGING_HEADER = "StayTune-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -924,9 +1119,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = StayTune/StayTune.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1.5;
 				DEVELOPMENT_TEAM = 8979SHK755;
 				INFOPLIST_FILE = StayTune/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -937,7 +1134,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nueve.staytune;
 				PRODUCT_NAME = StayTune;
-				PROVISIONING_PROFILE_SPECIFIER = staytune_provisionalprofile_Nov6th2019;
+				PROVISIONING_PROFILE_SPECIFIER = stayTune_appstore_provisionalProfile_04022020;
 				SWIFT_OBJC_BRIDGING_HEADER = "StayTune-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -954,7 +1151,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "StayTune-tvOS/Info.plist";
@@ -966,6 +1165,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.StayTune-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
@@ -982,8 +1182,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "StayTune-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -994,6 +1196,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.StayTune-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
@@ -1081,8 +1284,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 8979SHK755;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1136,8 +1339,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = 8979SHK755;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1154,6 +1357,65 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB16002E23754EC5007577D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8979SHK755;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nueve.staytune.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = staytune_onesignal_provisonal_profile_11/11/2019;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB16002F23754EC5007577D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8979SHK755;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nueve.staytune.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = staytune_onesignal_provisonal_profile_11/11/2019;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1196,11 +1458,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "staytune" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "StayTune" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB16002D23754EC5007577D1 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB16002E23754EC5007577D1 /* Debug */,
+				DB16002F23754EC5007577D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

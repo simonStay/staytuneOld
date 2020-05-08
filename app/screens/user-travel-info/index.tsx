@@ -52,6 +52,7 @@ const TabsList = [
     { id: 0, tab: "PROFILE INFO" },
     { id: 1, tab: "BUDGET INFO" },
     { id: 2, tab: "SAVED LOCATIONS" },
+    { id: 3, tab: "DIGITAL SOUVENIR" },
 ]
 
 class UserTravelInfo extends Component<Props, UserInformation> {
@@ -85,10 +86,12 @@ class UserTravelInfo extends Component<Props, UserInformation> {
                 })
             } else {
                 getUserInfo = this.props.user.userProfileInfo.data
-                await this.setState({
-                    userId: this.props.user.userProfileInfo.data.id,
-                    userToken: this.props.user.userProfileInfo.data.token
-                })
+                if (this.props.user.userProfileInfo !== undefined) {
+                    await this.setState({
+                        userId: this.props.user.userProfileInfo.data.id,
+                        userToken: this.props.user.userProfileInfo.data.token
+                    })
+                }
             }
             console.log("UserId:", this.state.userId + "," + "UserToken:", this.state.userToken)
 
@@ -252,11 +255,18 @@ class UserTravelInfo extends Component<Props, UserInformation> {
                         <BudgetInfo navigation={this.props.navigation}
                             getBudgetInfo={this.onClickRow.bind(this)} />
                     </ScrollView>
-                ) : (
-                            <SavedLocations navigation={this.props.navigation}
-                                getLocationInfo={this.locationInfo.bind(this)}
-                                locationBudgetInfo={this.onLocationBudget.bind(this)} />
-                        )}
+                ) : this.state.selectedTabId == 2 ? (
+                    <SavedLocations navigation={this.props.navigation}
+                        getLocationInfo={this.locationInfo.bind(this)}
+                        locationBudgetInfo={this.onLocationBudget.bind(this)} />
+                )
+                            : (
+                                <View style={styles.container}>
+                                    <ScrollView contentContainerStyle={styles.scrollContainer}>
+                                        <Text style={styles.initialText}>COMING SOON....</Text>
+                                    </ScrollView>
+                                </View>
+                            )}
             </View>
         )
     }

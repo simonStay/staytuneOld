@@ -46,8 +46,6 @@ const styles = StyleSheet.create({
   avatarView: {
     width: dimensions.width / 3 - 40,
     height: dimensions.width / 3 - 40,
-    marginHorizontal: 20,
-    marginVertical: 20,
   },
   checkImage: {
     width: dimensions.width / 6 - 40,
@@ -57,6 +55,17 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     zIndex: 9,
   },
+  tourGuideText: {
+    color: color.textColor,
+    fontSize: fontsize.notificationText,
+    fontWeight: "600",
+    alignSelf: 'center',
+    fontFamily: "OpenSans",
+    marginTop: 6,
+    textShadowColor: color.primary,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 0,
+  }
 })
 
 export default styles

@@ -73,7 +73,7 @@ class SelectAvatar extends Component<Props, listOfAvatars, {}> {
           setTimeout(() => {
             Alert.alert(
               "Stay Tune",
-              "Something went wrong",
+              "Server not responding, please try after sometime.",
               [{ text: "OK", onPress: () => console.log("OK Pressed") }],
               { cancelable: false },
             )

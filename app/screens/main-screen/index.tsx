@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { View } from "react-native"
+import { View, AsyncStorage, Keyboard } from "react-native"
 import { NavigationScreenProp, NavigationState } from "react-navigation"
 import styles from "./styles"
 import { Drawer } from "native-base"
@@ -22,6 +22,12 @@ import Notifications from "../notifications"
 
 import { connect } from "react-redux"
 import { Signout } from "../../redux/actions/user"
+import { openNotification } from "../../redux/actions/notifications"
+
+import OneSignal from 'react-native-onesignal';
+import { dimensions } from '../../theme';
+
+
 
 interface Props {
   navigation: NavigationScreenProp<NavigationState>
@@ -30,7 +36,12 @@ interface Props {
   tabId: any
   selectedValue: any
   user: any
+  notifications: any
+  openNotification: any
+  travel: any
+  preferenceId: any
 }
+
 interface UserInformation {
   isOpen: boolean
   selectedValue: any
@@ -46,7 +57,11 @@ interface UserInformation {
   tabId: any
   modalVisible: any
   travelPreferenceId: string
+  notificationPreferenceId: any
   startPlan: any
+  pid: any
+  from: any
+  preferenceId: any
 }
 
 interface extraInfo {
@@ -62,6 +77,8 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
     this.state = {
       selectedValue: this.props.navigation.state.params.selectedValue,
       headerTitle: this.props.navigation.state.params.headerTitle,
+      from: this.props.navigation.state.params.from,
+      preferenceId: this.props.navigation.state.params.preferenceId,
       isOpen: false,
       userObj: null,
       avatarSource: "",
@@ -74,11 +91,92 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
       tabId: 2,
       modalVisible: false,
       travelPreferenceId: "",
-      startPlan: false
+      startPlan: false,
+      pid: '',
+      notificationPreferenceId: "",
+    }
+  }
+
+
+  async componentWillMount() {
+    // alert(dimensions.height)
+    console.log('in app.js:');
+    setTimeout(async () => {
+      await OneSignal.init('8d39b7db-d029-4bbd-af58-20e3f53cc4a9', {
+        kOSSettingsKeyAutoPrompt: true,
+        kOSSettingsKeyInFocusDisplayOption: 1
+      });
+    }, 5000);
+    await OneSignal.addEventListener('received', this.onReceived.bind(this));
+    await OneSignal.addEventListener('opened', this.onOpened.bind(this));
+    await OneSignal.addEventListener('ids', this.onIds.bind(this));
+    await OneSignal.addEventListener('inAppMessageClicked', this.onInAppMessageClicked.bind(this));
+    await OneSignal.configure();
+    // OneSignal.idsAvailable(idsAvailable => {
+    //   console.log(idsAvailable.playerId);
+    //   console.log(idsAvailable.pushToken);
+    // });
+    await OneSignal.getPermissionSubscriptionState(async status => {
+      const deviceId = status.deviceId;
+      console.log('getPermissionSubscriptionState', deviceId);
+    });
+
+    // OneSignal.getUserId(id => {
+    //   console.log('getUserId', id);
+    // });
+  }
+
+  componentWillUnmount() {
+    OneSignal.removeEventListener('received', this.onReceived.bind(this));
+    OneSignal.removeEventListener('opened', this.onOpened.bind(this));
+    OneSignal.removeEventListener('ids', this.onIds.bind(this));
+    OneSignal.removeEventListener('InAppMessageClicked', this.onInAppMessageClicked.bind(this));
+    //BackgroundGeolocation.removeAllListeners();
+  }
+  onInAppMessageClicked(notification) {
+    console.log("notification_clicked", notification)
+  }
+
+  async onIds(device) {
+
+    console.log('Device info: ', device);
+    console.log('player id: ', device.userId);
+    this.setState({
+      pid: device.userId
+    });
+    console.log(this.state.pid);
+    AsyncStorage.setItem('@deviceId', this.state.pid);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  onReceived(notification) {
+    console.log('Notification received: ', notification);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  async onOpened(openResult) {
+    console.log('whole', openResult.notification);
+    console.log('Message: ', openResult.notification.payload.body);
+    console.log('Data: ', openResult.notification.payload.additionalData);
+    console.log('isActive: ', openResult.notification.isAppInFocus);
+    console.log('openResult: ', openResult);
+    if (openResult.notification.isAppInFocus === false) {
+      // TODO: Toast Notification
+      // await this.props.openNotification(true)
+      this.setState({
+        selectedValue: "NOTIFICATIONS",
+        headerTitle: "NOTIFICATIONS",
+        isOpen: false,
+      })
+    } else {
+      // alert("else")
+      // TODO: Go to the room
+
     }
   }
 
   async componentDidMount() {
+    console.log("navigation_123:", this.props.navigation.state.params.navigateTo)
     try {
       let getUserInfo
       if (this.props.navigation.state.params.selectedValue !== undefined) {
@@ -92,24 +190,45 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
           userObj: getUserInfo
         })
       } else {
-        getUserInfo = this.props.user.userProfileInfo.data
-        await this.setState({
-          userObj: getUserInfo
-        })
+        if (this.props.user.userProfileInfo !== undefined) {
+          getUserInfo = this.props.user.userProfileInfo.data
+          await this.setState({
+            userObj: getUserInfo
+          })
+        }
       }
-
+      console.log("selectedValue_123_navigateTo:", this.props.navigation.state.params.preferenceId)
       if (this.props.navigation.state.params.navigateTo == "TravelPreferenceScreen") {
         this.setState({
           selectedValue: "Travel preference",
           travelPreferenceId: this.props.navigation.state.params.preferenceId,
           headerTitle: "TRAVEL PREFERENCE",
         })
+      } else if (this.props.navigation.state.params.navigateTo == "Select tour guide") {
+        this.setState({
+          selectedValue: "Select tour guide",
+          headerTitle: "TOUR GUIDE",
+          isOpen: false,
+        })
+      } else if (this.props.navigation.state.params.navigateTo == "CHAT") {
+        this.setState({
+          selectedValue: "CHAT",
+          headerTitle: "CHAT",
+          isOpen: false,
+        })
+      }
+      else if (this.props.navigation.state.params.navigateTo == "NOTIFICATIONS") {
+        this.setState({
+          selectedValue: "NOTIFICATIONS",
+          headerTitle: "NOTIFICATIONS",
+          notificationPreferenceId: this.props.navigation.state.params.preferenceId,
+          isOpen: false,
+        })
       }
 
     } catch (error) {
 
     }
-
   }
 
   onLeft() {
@@ -126,9 +245,11 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
         modalVisible: false
       })
     }
+    Keyboard.dismiss();
   }
 
   async closeDrawer(params) {
+    // alert("called")
     if (params == "Edit Profile") {
       this.setState({
         selectedValue: "Edit Profile",
@@ -138,9 +259,10 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
     } else if (params == "Start a plan") {
       this.setState({
         selectedValue: "Start a plan",
-        headerTitle: "STAY TUNE",
+        headerTitle: "STAYTUNE",
         isOpen: false,
         modalVisible: false,
+        travelPreferenceId: '',
         startPlan: true
 
       })
@@ -151,12 +273,26 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
         isOpen: false,
       })
     } else if (params == "Travel preference") {
-      this.setState({
-        selectedValue: "Travel preference",
-        headerTitle: "TRAVEL PREFERENCE",
-        isOpen: false,
-        startPlan: false
-      })
+      if (this.props.travel.savedLocations !== undefined) {
+        if (this.props.travel.savedLocations.length != 0) {
+          this.setState({
+            selectedValue: "Travel preference",
+            headerTitle: "TRAVEL PREFERENCE",
+            travelPreferenceId: this.props.travel.savedLocations[0].id,
+            isOpen: false,
+            startPlan: false
+          })
+        }
+      } else {
+        this.setState({
+          selectedValue: "Start a plan",
+          headerTitle: "STAYTUNE",
+          isOpen: false,
+          modalVisible: false,
+          travelPreferenceId: '',
+          startPlan: true
+        })
+      }
     } else if (params == "Digital souvenir") {
       this.setState({
         selectedValue: "Digital souvenir",
@@ -166,7 +302,7 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
     } else if (params == "Select tour guide") {
       this.setState({
         selectedValue: "Select tour guide",
-        headerTitle: "SELECT TOUR GUIDE",
+        headerTitle: "TOUR GUIDE",
         isOpen: false,
       })
     } else if (params == "Saved locations") {
@@ -184,7 +320,14 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
         tabId: 1,
       })
     } else if (params == "Signout") {
+      await AsyncStorage.removeItem('@userAsyncValues');
       await this.props.Signout()
+      try {
+        await this.child.closeModal()
+      } catch (err) {
+        console.log("closeModal_123:", err)
+      }
+
       this.props.navigation.push("Login")
     }
     this.drawer._root.close()
@@ -200,7 +343,7 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
     } else {
       this.setState({
         selectedValue: "Start a plan",
-        headerTitle: "STAY TUNE",
+        headerTitle: "STAYTUNE",
       })
     }
   }
@@ -215,7 +358,8 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
 
   selectedTab(value) {
     this.setState({
-      selectedValue: value.tab
+      selectedValue: value.tab,
+      notificationPreferenceId: null
     }, () => {
       if (this.state.selectedValue == 'CHAT') {
         this.setState({ headerTitle: "CHAT" })
@@ -248,17 +392,23 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
       tabId: value
     })
   }
+
   renderContanier() {
+    // alert("travelPreferenceId:" + this.state.travelPreferenceId)
     if (this.state.selectedValue == "Edit Profile") {
       return <EditProfile navigation={this.props.navigation} getUpdateUserInfo={this.updatedUserInfo.bind(this)} />
     } else if (this.state.selectedValue == "Start a plan") {
       return (
         <MapScreen
+          onRef={ref => (this.child = ref)}
           navigation={this.props.navigation}
           handleSelectedValue={this.handleSelectedValue.bind(this)}
           modalVisible={this.state.modalVisible}
           onRight={this.onRight.bind(this)}
           startPlan={this.state.startPlan}
+          from={this.state.from}
+          userId={this.props.navigation.state.params.userId}
+
         />
       )
     } else if (this.state.selectedValue == "Itinerary suggestions") {
@@ -268,7 +418,7 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
     } else if (this.state.selectedValue == "Digital souvenir") {
       return <DigitalSouvenir navigation={this.props.navigation} />
     } else if (this.state.selectedValue == "Select tour guide") {
-      return <SelectTourGuide navigation={this.props.navigation} />
+      return <SelectTourGuide navigation={this.props.navigation} from={this.state.from} preferenceId={this.state.preferenceId} />
     } else if (this.state.selectedValue == "Saved locations") {
       return (
         <UserTravelInfo
@@ -291,8 +441,27 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
     } else if (this.state.selectedValue == 'CHAT') {
       return <Chat navigation={this.props.navigation} />
     } else if (this.state.selectedValue == 'NOTIFICATIONS') {
-      return <Notifications navigation={this.props.navigation} />
+      return <Notifications
+        navigation={this.props.navigation}
+        preferenceId={this.state.notificationPreferenceId} />
     }
+  }
+
+  onRightIconPressed() {
+    this.setState({
+      selectedValue: "Start a plan",
+      headerTitle: "STAYTUNE",
+      isOpen: false,
+      modalVisible: false,
+      travelPreferenceId: '',
+      startPlan: true,
+      from: ''
+    })
+  }
+  backClose() {
+    this.setState({
+      isOpen: false,
+    })
   }
 
   render() {
@@ -306,6 +475,8 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
             titleStyle={styles.headerTitle}
             leftIcon={"menu"}
             onLeftPress={this.onLeft.bind(this)}
+            onRightPress={this.onRightIconPressed.bind(this)}
+            rightIcon={"map"}
           />
         ) : (
             <View>
@@ -315,8 +486,9 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
                 titleStyle={styles.headerTitle}
                 leftIcon={"menu"}
                 onLeftPress={this.onLeft.bind(this)}
-                rightIcon={this.state.selectedValue == "Start a plan" ? "filter" : null}
-                onRightPress={this.onRight.bind(this)}
+                from={this.state.from}
+                onRightPress={this.onRightIconPressed.bind(this)}
+                rightIcon={"map"}
               />
               <GoldBarView />
             </View>
@@ -328,6 +500,7 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
             ref={ref => {
               this.drawer = ref
             }}
+            onClose={() => this.backClose()}
             content={
               <SideBar
                 navigation={this.props.navigation}
@@ -335,7 +508,7 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
                 userProfileInfo={this.state.userObj}
               />
             }
-            onClose={() => this.closeDrawer()}
+
           >
             {this.renderContanier()}
             {this.renderBottomTabBar()}
@@ -349,8 +522,11 @@ class MainScreen extends Component<Props, UserInformation, extraInfo> {
 export default connect(
   state => ({
     user: state.user,
+    notifications: state.notifications,
+    travel: state.travel
   }),
   {
+    openNotification,
     Signout,
   },
 )(MainScreen)

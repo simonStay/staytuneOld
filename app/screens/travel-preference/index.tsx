@@ -43,7 +43,7 @@ class TravelPreference extends Component<Props, categoriesInfo> {
   }
 
   async componentDidMount() {
-    // alert(this.props.travelPreferenceId)
+    console.log("preferenceID", this.props.travelPreferenceId)
     try {
       let listPreferenceTypes = []
       if (this.props.travelPreferenceId == null || this.props.travelPreferenceId == "" || this.props.travelPreferenceId == "undefined") {
@@ -142,16 +142,18 @@ class TravelPreference extends Component<Props, categoriesInfo> {
     return (
       <TouchableOpacity
         onPress={this.state.visible == false ? this.onSelectedPreference.bind(this, item) : null}
-        activeOpacity={0.6}
+        activeOpacity={1}
       >
         <ImageLoad
           style={styles.listImage}
           loadingStyle={{ size: "large", color: "blue" }}
-          source={{ uri: item.image }}
+          source={item.name == 'Business' ? require("./../../assests/business.jpg") : item.name == 'Local Experience' ? require("./../../assests/local-exp.png") :
+            item.name == 'Travel On a Budget' ? require("./../../assests/travel-Bud.jpg") : item.name == 'Foodie' ? require("./../../assests/vegan.jpg") :
+              item.name == 'Solo Traveler' ? require("./../../assests/solo-traveller.jpg") : item.name == 'Family Oriented' ? require("./../../assests/family.jpg") : require("./../../assests/shopping.jpg")}
           placeholderSource={require("./../../assests/placeholder-image.png")}
           placeholderStyle={styles.listImage}
         >
-          <View style={styles.transparentView} />
+          <View style={[styles.transparentView, { opacity: item.selected ? 0.15 : 0.50 }]} />
         </ImageLoad>
         <View style={styles.elevateView}>
           {ImageView}
@@ -166,7 +168,7 @@ class TravelPreference extends Component<Props, categoriesInfo> {
       <View style={styles.container}>
         {this.state.visible == false ? (
           <Text style={styles.textStyle}>
-            Set your travel preference when travelling some where
+            Set Travel Theme
           </Text>
         ) : null}
         <FlatList

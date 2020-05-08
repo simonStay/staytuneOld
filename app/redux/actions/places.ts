@@ -29,6 +29,7 @@ export function touristLocations(region) {
 }
 
 export function getFilterByType(type, region) {
+  console.log("type", type)
   console.log("region_123", JSON.stringify(region))
   return async dispatch => {
     dispatch({
@@ -36,7 +37,7 @@ export function getFilterByType(type, region) {
       payload: true,
     })
     const res = await fetch(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${region.latitude},${region.longitude}&radius=10000&type=${type}&key=AIzaSyBI_ae3Hvrib8Bao3_WrhXLEHKuGj1J8pQ`,
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${region.latitude},${region.longitude}&radius=5000&type=${type}&key=AIzaSyBI_ae3Hvrib8Bao3_WrhXLEHKuGj1J8pQ`,
       {
         method: "GET",
         headers: {
@@ -45,7 +46,7 @@ export function getFilterByType(type, region) {
       },
     )
     const body = await resToBody(res)
-    console.log("LOCATION_RES", JSON.stringify(body.results))
+    // console.log("body", JSON.stringify(body))
     return dispatch({
       type: FILTERED_LOCATIONS,
       payload: body.results,

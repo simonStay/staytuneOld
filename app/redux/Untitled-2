@@ -1,0 +1,26 @@
+import AsyncStorage from "@react-native-community/async-storage"
+import { persistStore, persistReducer } from "redux-persist"
+import { createStore, applyMiddleware, compose } from "redux"
+import thunk from "redux-thunk"
+import rootReducer from "./reducers"
+
+const composeEnhancer =
+  (window["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] as typeof compose) || compose
+
+const persistConfig = {
+  key: "async",
+  storage: AsyncStorage,
+  whitelist: ["user", "travel", "places", "budget"],
+}
+const initialState = {}
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
+const store = createStore(persistedReducer, initialState, composeEnhancer(applyMiddleware(thunk)))
+const persistor = persistStore(store)
+
+export default {
+  store,
+  persistor,
+}
+
+export { store, persistor }

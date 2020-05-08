@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native"
-import { color } from "../../theme"
+import { color, dimensions } from "../../theme"
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
     backgroundColor: color.transparent,
+    paddingTop: dimensions.width * 0.036
   },
   wallpaper: { flex: 1 },
   initialText: {

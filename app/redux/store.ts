@@ -26,9 +26,11 @@
 //   return { store, persistor }
 // }
 
-import AsyncStorage from "@react-native-community/async-storage"
-import storage from "redux-persist/lib/storage"
+//import AsyncStorage from "@react-native-community/async-storage"
+//import storage from "redux-persist/lib/storage"
+import FilesystemStorage from 'redux-persist-filesystem-storage'
 import { persistStore, persistReducer } from "redux-persist"
+
 
 import { createStore, applyMiddleware, compose } from "redux"
 import thunk from "redux-thunk"
@@ -39,7 +41,8 @@ const composeEnhancer =
 
 const persistConfig = {
   key: "async",
-  storage: AsyncStorage,
+  storage: FilesystemStorage,
+  timeout: 0,
   whitelist: ["user", "travel", "places", "budget"],
 }
 const initialState = {}

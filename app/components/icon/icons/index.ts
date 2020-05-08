@@ -2,6 +2,7 @@ export const icons = {
   back: require("./arrow-left.png"),
   bullet: require("./bullet.png"),
   menu: require("./menu-button.png"),
+  map: require("./map.png"),
   startplan: require("./start-plan.png"),
   savedlocation: require("./saved-location.png"),
   preference: require("./preferences.png"),
@@ -16,6 +17,9 @@ export const icons = {
   cancel: require("./cancel.png"),
   budgetBlack: require("./budgetBlack.png"),
   edit: require("./edit.png"),
+  search: require("./search.png"),
+  cross: require("./cross.png"),
+  notification: require("./bell.png")
 }
 
 export type IconTypes = keyof typeof icons

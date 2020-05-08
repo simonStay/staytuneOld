@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Image, Keyboard, Alert, View } from "react-native"
+import { Image, Keyboard, Alert, View, AsyncStorage } from "react-native"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 import { NavigationScreenProp, NavigationState } from "react-navigation"
 import { Wallpaper } from "../../components/wallpaper"
@@ -10,13 +10,22 @@ import styles from "./styles"
 import { color } from "../../theme"
 import { Login } from "../../redux/actions/user"
 import { userSavedLocations } from "../../redux/actions/travel"
+import { updateUserLocation } from "../../redux/actions/user"
 import { connect } from "react-redux"
 import AnimatedLoader from "react-native-animated-loader"
+import DeviceInfo from 'react-native-device-info'
+import OneSignal from 'react-native-onesignal';
+import Geolocation from "@react-native-community/geolocation"
+import moment from "moment"
+import firebase from 'react-native-firebase';
+let Analytics = firebase.analytics();
 
 interface Props {
   navigation: NavigationScreenProp<NavigationState>
   user: any
   Login: any
+  userSavedLocations: any
+  updateUserLocation: any
 }
 interface userDetails {
   email: string
@@ -24,6 +33,11 @@ interface userDetails {
   token: any
   userId: any
   visible: boolean
+  deviceId: any
+  latitude: any
+  longitude: any
+  latitudeDelta: any
+  longitudeDelta: any
 }
 
 class LoginScreen extends Component<Props, userDetails> {
@@ -34,8 +48,25 @@ class LoginScreen extends Component<Props, userDetails> {
       password: "",
       token: "",
       userId: "",
+      deviceId: "",
       visible: this.props.user.loader,
+      latitude: null,
+      longitude: null,
+      latitudeDelta: null,
+      longitudeDelta: null,
     }
+    this.passwordInput = React.createRef()
+  }
+
+  async componentWillMount() {
+    await OneSignal.addEventListener('ids', this.onIds.bind(this));
+  }
+
+  async onIds(device) {
+    console.log('deviceId id: ', device.userId);
+    this.setState({
+      deviceId: device.userId
+    });
   }
 
   onSignUp() {
@@ -75,8 +106,8 @@ class LoginScreen extends Component<Props, userDetails> {
         { cancelable: false },
       )
     } else {
-      const { email, password } = this.state
-      await this.props.Login(email, password)
+      const { email, password, deviceId } = this.state
+      await this.props.Login(email, password, deviceId)
       // if (this.props.user.login == undefined || this.props.user.login == "undefined") {
       //   {
       //     /* Note: this is Temporary solution alert is not diplaying after animation making for that
@@ -134,23 +165,61 @@ class LoginScreen extends Component<Props, userDetails> {
             [
               {
                 text: "OK",
-                onPress: () => {},
+                onPress: () => { },
               },
             ],
             { cancelable: false },
           )
         }, 100)
-      } else {
+      } else if (this.props.user.login == "error") {
+        setTimeout(() => {
+          Alert.alert(
+            "Stay Tune",
+            "Server not responding, please try after sometime.",
+            [
+              {
+                text: "OK",
+                onPress: () => { },
+              },
+            ],
+            { cancelable: false },
+          )
+        }, 100)
+      }
+      else {
+        Geolocation.getCurrentPosition(async (position) => {
+          console.log("position_123", JSON.stringify(position))
+          this.setState({
+            latitude: await position.coords.latitude,
+            longitude: await position.coords.longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          })
+          let locationInfo = {
+            userId: await this.props.user.login.id,
+            lat: await parseFloat(this.state.latitude),
+            long: await parseFloat(this.state.longitude),
+            date: moment().format("DD-MM-YYYYThh:mm:ss")
+          }
+          await console.log("position_locationInfo_123", JSON.stringify(locationInfo))
+          await this.props.updateUserLocation(locationInfo)
+        })
+
         this.setState({
           userId: this.props.user.login.id,
           token: this.props.user.login.token,
         })
         this.props.userSavedLocations(this.state.userId)
+        Analytics.setAnalyticsCollectionEnabled(true);
+        Analytics.logEvent('Login', {
+          group_id: 'Login_screen',
+          score: 1
+        })
         if (this.props.user.loader === false) {
           this.props.navigation.push("MainScreen", {
             userId: this.state.userId,
             selectedValue: "Start a plan",
-            headerTitle: "STAY TUNE",
+            headerTitle: "STAYTUNE",
           })
           this.setState({
             email: "",
@@ -169,7 +238,7 @@ class LoginScreen extends Component<Props, userDetails> {
         <KeyboardAwareScrollView resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={true}>
           <Image style={styles.logo} source={require("../splash/logo.png")} />
           <Text style={styles.textStyle}>
-            Hello! I'm StayTune, your personal travel assistant, may i have your email & password
+            Hi! Welcome to your Smart Travel Companion. Discover new experiences with personalized recommendations.
           </Text>
           <TextField
             inputStyle={styles.inputStyle}
@@ -178,15 +247,22 @@ class LoginScreen extends Component<Props, userDetails> {
             onChangeText={value => this.setState({ email: value })}
             value={this.state.email}
             autoCapitalize="none"
+            keyboardType="email-address"
+            returnKeyType="next"
+            onSubmitEditing={() => this.passwordInput.current.focus()}
+
           />
           <TextField
             inputStyle={styles.inputStyle}
+            forwardedRef={this.passwordInput}
             placeholder="Enter your password"
             placeholderTextColor={color.placeholderText}
             secureTextEntry={true}
             onChangeText={value => this.setState({ password: value })}
             value={this.state.password}
             autoCapitalize="none"
+            returnKeyType="done"
+            onSubmitEditing={this.onLogin.bind(this)}
           />
           <Text
             style={styles.forgotPasswordText}
@@ -226,5 +302,6 @@ export default connect(
   {
     Login,
     userSavedLocations,
+    updateUserLocation
   },
 )(LoginScreen)

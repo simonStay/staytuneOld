@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "958205721290",
+    "firebase_url": "https://staytune.firebaseio.com",
+    "project_id": "staytune",
+    "storage_bucket": "staytune.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958205721290:android:cd4a443e33941868259233",
+        "android_client_info": {
+          "package_name": "com.staytune"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958205721290-kve8a3gjeloeaar4g6b8v78n9mraikk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_YS3aJFat9pj-zYYsVDIW192VjbzEiPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958205721290-kve8a3gjeloeaar4g6b8v78n9mraikk9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "958205721290-krd1kv5ver958dquon8gpn94s2qiph0t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nueve.staytune"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

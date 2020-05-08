@@ -15,6 +15,8 @@ import _ from "lodash"
 import { connect } from "react-redux"
 import AnimatedLoader from "react-native-animated-loader"
 import { updateTravelPreferences, userSavedLocations } from "../../redux/actions/travel"
+import firebase from 'react-native-firebase';
+let Analytics = firebase.analytics();
 
 interface Props {
   navigation: NavigationScreenProp<NavigationState>
@@ -54,7 +56,7 @@ class SetInitialInterest extends Component<Props, UserInformation> {
     try {
       if (this.props.travel.travelPreferenceInfo == undefined ||
         this.props.travel.travelPreferenceInfo == "undefined") {
-        //console.log("categories_123_if")
+        console.log("categories_123_if:", this.props.travel.editTravelPreferences.categoriesList)
         await this.setState({ categories: this.props.travel.editTravelPreferences.categoriesList, update: true })
 
       } else {
@@ -71,6 +73,7 @@ class SetInitialInterest extends Component<Props, UserInformation> {
   }
 
   async onNext() {
+
     // console.log("userInitialInterests_123" + JSON.stringify(this.state.categories))
     var selectedSubCategorires = []
     this.state.categories.map((res, i) => {
@@ -101,7 +104,7 @@ class SetInitialInterest extends Component<Props, UserInformation> {
       }
       try {
         let setTravelBudget = {
-          preferenceId: this.props.travel.travelPreferenceInfo.id,
+          preferenceId: this.props.travel.travelPreferenceInfo != undefined ? this.props.travel.travelPreferenceInfo.id : this.props.travel.travelInfo.preferenceId,
           userId: userId,
           selectedCategories: this.state.categories,
         }
@@ -121,17 +124,24 @@ class SetInitialInterest extends Component<Props, UserInformation> {
                 [
                   {
                     text: "OK",
-                    onPress: () => {
+                    onPress: async () => {
                       console.log("userProfileInfo", this.props.user.userProfileInfo)
                       let userId =
                         this.props.user.userProfileInfo === undefined
                           ? this.props.user.login.id
                           : this.props.user.userProfileInfo.id
                       this.props.userSavedLocations(userId)
+                      Analytics.setAnalyticsCollectionEnabled(true);
+                      Analytics.logEvent('Travel_preference', {
+                        group_id: 'Travel_preference',
+                        score: 1
+                      })
                       this.props.navigation.push("MainScreen", {
                         userId: userId,
-                        selectedValue: "Start a plan",
-                        headerTitle: "STAY TUNE",
+                        from: 'interest',
+                        preferenceId: this.props.travel.travelPreferenceInfo != undefined ? this.props.travel.travelPreferenceInfo.id : this.props.travel.travelInfo.preferenceId,
+                        selectedValue: "Select tour guide",
+                        headerTitle: "TOUR GUIDE",
                       })
                     },
                   },
@@ -153,11 +163,12 @@ class SetInitialInterest extends Component<Props, UserInformation> {
                         this.props.user.userProfileInfo === undefined
                           ? this.props.user.login.id
                           : this.props.user.userProfileInfo.id
+
                       this.props.userSavedLocations(userId)
                       this.props.navigation.push("MainScreen", {
                         userId: userId,
-                        selectedValue: "Start a plan",
-                        headerTitle: "STAY TUNE",
+                        selectedValue: "Select tour guide",
+                        headerTitle: "TOUR GUIDE",
                       })
                     },
                   },
@@ -174,7 +185,7 @@ class SetInitialInterest extends Component<Props, UserInformation> {
           setTimeout(() => {
             Alert.alert(
               "Stay Tune",
-              "Something went wrong",
+              "Server not responding, please try after sometime.",
               [{ text: "OK", onPress: () => console.log("OK Pressed") }],
               { cancelable: false },
             )

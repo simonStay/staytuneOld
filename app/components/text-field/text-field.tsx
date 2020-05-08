@@ -61,6 +61,7 @@ export const TextField: React.FunctionComponent<TextFieldProps> = props => {
         {...rest}
         style={inputStyle}
         ref={forwardedRef}
+        allowFontScaling={false}
       />
     </View>
   )

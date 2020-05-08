@@ -61,8 +61,8 @@ class EditBudget extends Component<Props, userBudgetInfo> {
       "userId": this.props.navigation.state.params.userId,
       "travelId": this.props.navigation.state.params.travelPreferenceId
     }
-
-    console.log("DetailedBudget_123", JSON.stringify(DetailedBudget))
+    console.log("DetailedBudget_123_JSON.stringify", JSON.stringify(DetailedBudget))
+    console.log("DetailedBudget_123", DetailedBudget)
     await this.props.EditBudgetInfo(DetailedBudget)
     this.props.navigation.pop()
     this.props.navigation.state.params.onSelect({ editBudget: true });

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Text as ReactNativeText } from "react-native"
+import { Text as ReactNativeText, allowFontScaling } from "react-native"
 import { presets } from "./text.presets"
 import { TextProps } from "./text.props"
 import { translate } from "../../i18n"
@@ -20,7 +20,7 @@ export function Text(props: TextProps) {
 
   const style = mergeAll(flatten([presets[preset] || presets.default, styleOverride]))
   return (
-    <ReactNativeText {...rest} style={style}>
+    <ReactNativeText {...rest} style={style} allowFontScaling={false}>
       {content}
     </ReactNativeText>
   )
