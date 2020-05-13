@@ -155,9 +155,7 @@ class EditProfile extends Component<Props, UserInformation> {
         { cancelable: false },
       )
     } else {
-
       try {
-
         console.log("userId_editProfile:", this.props.user.userProfileInfo)
 
         let id =
@@ -257,10 +255,10 @@ class EditProfile extends Component<Props, UserInformation> {
           }
           var obj = {
             keyPrefix: "profile-pictures/",
-            bucket: "stay-tune-avatars",
+            bucket: "staytune-terraform",
             region: "us-west-2",
-            accessKey: "AKIAVPIPZG7WIVCBNST5 ",
-            secretKey: "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",
+            accessKey: "AKIATDR4HVPPCOUMLSY6",
+            secretKey: "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",
             successActionStatus: 201,
           }
           RNS3.put(file, obj).then(response => {
@@ -270,7 +268,7 @@ class EditProfile extends Component<Props, UserInformation> {
 
               //alert("profile:"+JSON.stringify(response))
               var profileSource =
-                "https://stay-tune-avatars.s3-us-west-2.amazonaws.com/profile-pictures/" +
+                "https://staytune-terraform.s3-us-west-2.amazonaws.com/profile-pictures/" +
                 key +
                 ".png"
 
@@ -314,8 +312,8 @@ class EditProfile extends Component<Props, UserInformation> {
             ) : this.state.avatarSource === null ? (
               <View style={[styles.profilePicView, { borderWidth: 0 }]} />
             ) : (
-                  <Image style={styles.profilePic} source={{ uri: this.state.avatarSource }} />
-                )}
+              <Image style={styles.profilePic} source={{ uri: this.state.avatarSource }} />
+            )}
           </View>
           <TouchableOpacity onPress={this.onSelectImage.bind(this)}>
             <Text style={styles.changeProfileText}>Change Profile</Text>
@@ -345,7 +343,7 @@ class EditProfile extends Component<Props, UserInformation> {
             inputStyle={styles.textField}
             placeholderTextColor={color.placeholderText}
             onChangeText={value => this.setState({ age: value })}
-            value={this.state.age != null ? this.state.age.toString() : ''}
+            value={this.state.age != null ? this.state.age.toString() : ""}
           />
           <TextField
             placeholder="State"

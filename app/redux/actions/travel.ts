@@ -11,7 +11,7 @@ export const GET_PREFERENCES_BY_ID = "GET_PREFERENCES_BY_ID"
 export const EDIT_TRAVEL_PREFERENCE = "EDIT_TRAVEL_PREFERENCE"
 export const GET_GUIDE_BY_ID = "GET_GUIDE_BY_ID"
 
-const STAYTUNELIVEURL = "https://staytune.austinconversionoptimization.com"
+const STAYTUNELIVEURL = "https://api.staytune.co"
 
 export function travelPreferenceTypes() {
   return async dispatch => {
@@ -72,7 +72,7 @@ export function setTravelPreferences(setTravelBudget) {
         city: setTravelBudget.city,
         locationImage: setTravelBudget.locationImage,
         travelDate: setTravelBudget.travelDate,
-        userId: setTravelBudget.userId
+        userId: setTravelBudget.userId,
       }),
     })
     const body = await resToBody(res)
@@ -104,7 +104,7 @@ export function editPreferences(setTravelBudget) {
         city: setTravelBudget.city,
         locationImage: setTravelBudget.locationImage,
         travelDate: setTravelBudget.travelDate,
-        id: setTravelBudget.preferenceId
+        id: setTravelBudget.preferenceId,
       }),
     })
     const body = await resToBody(res)
@@ -206,7 +206,6 @@ export function getTourGuideById(guideId) {
   }
 }
 
-
 export default {
   travelPreferenceTypes,
   selectedTravelPreferences,
@@ -227,5 +226,5 @@ export default {
   UPDATE_TRAVEL_PREFERENCE,
   GET_PREFERENCES_BY_ID,
   GET_GUIDE_BY_ID,
-  EDIT_TRAVEL_PREFERENCE
+  EDIT_TRAVEL_PREFERENCE,
 }
